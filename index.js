@@ -10,6 +10,8 @@ var liveStream = module.exports = function (db, opts) {
 
   opts.onSync = function () {
     ts.emit('sync')
+    if (opts.notifyOnSync)
+      ts.emit('data', { type: 'sync' })
   }
   return ts = toStream(null, pull.read(db, opts))
 }
