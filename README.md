@@ -57,7 +57,8 @@ LiveStream(db, {
                 //if old=false you will only get live updates
   min : loKey,  //lowest key in range
   max : hiKey,  //highest key in range
-  reverse: true //stream in reverse (only applies to old records)
+  reverse: true, //stream in reverse (only applies to old records)
+  notifyOnSync: false //add {type: 'sync'} between old and live data
 })
 ```
 
